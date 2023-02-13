@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+        "baseUrl": "./typings/modules/react/",
+        "paths": {
+            "react": ["index.d.ts"]
+        },
+        "module": "ES6",
+        "target": "ESNext",
+        "moduleResolution": "classic",
+        "jsx": "react"
+    }
+}

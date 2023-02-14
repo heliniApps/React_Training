@@ -1,7 +1,4 @@
-// import React from "react";
-// import { useState } from "react";
-
-// const React = require("react");
+import React from "react";
 
 // ReactDOM.render(
 //     React.createElement("h1", null, "Heading using ReactDOM.render()."),

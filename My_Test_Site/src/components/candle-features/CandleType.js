@@ -1,6 +1,6 @@
 import FeatureImage from "./FeatureImage";
 import FeatureList from "./FeatureList";
-import { candleTypeData } from "../model/data.js";
+import { candleTypeData } from "../../model/data.js";
 
 const candleTypeObjects = candleTypeData.map((item, index) => ({
   id: index,

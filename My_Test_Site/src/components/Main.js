@@ -1,9 +1,9 @@
 import React from "react";
 
-import CandleType from "./CandleType";
-import CandleFragrance from "./CandleFragrance";
+import CandleType from "./candle-features/CandleType";
+import CandleFragrance from "./candle-features/CandleFragrance";
 import CurrentStatus from "./CurrentStatus";
-import FeedbackForm from "./FeedbackForm";
+import FeedbackForm from "./feedback-form/FeedbackForm";
 
 const Main = () => {
   let mainComponent = (

@@ -9,7 +9,7 @@ body {
 #root {
   display: flex;
   flex-direction: column;
-  width: 70%;
+  width: 50%;
   height: 100%;
   margin: 0 1rem;
   padding: 0.5rem;

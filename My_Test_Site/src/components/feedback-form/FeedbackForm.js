@@ -1,4 +1,4 @@
-import { useState, useEffect, useReducer } from "react";
+import { useReducer } from "react";
 
 import NewsletterSubscription from "./NewsletterSubscription";
 import EmotionFeedback from "./EmotionFeedback";
@@ -22,7 +22,7 @@ const FeedbackMessage = ({ displayText }) => {
   return msgComponent;
 };
 
-const feedbackMessageReducer = (currState, userInput) => {
+const feedbackMessageReducer = (currValue, userInput) => {
   let textAreaElem = document.querySelector("#feedbackText");
   userInput = textAreaElem.value;
 
@@ -30,15 +30,15 @@ const feedbackMessageReducer = (currState, userInput) => {
 };
 
 const FeedbackForm = () => {
-  let initDisplayText = "none yet";
-
-  const [displayText, setDisplayText] = useState(initDisplayText);
-  const [userInput, setUserInput] = useReducer(feedbackMessageReducer, "");
-
-  useEffect(() => setDisplayText(userInput), [userInput]);
+  let defaultDisplayText = "nothing yet";
+  /* version 1 */
+  const [userInput, setUserInput] = useReducer(
+    feedbackMessageReducer,
+    defaultDisplayText
+  );
 
   const onSubmitBtnClick = (event) => {
-    setUserInput(userInput);
+    setUserInput(null);
   };
 
   let component = (
@@ -48,7 +48,7 @@ const FeedbackForm = () => {
       </div>
 
       <div className="feedback-form">
-        <FeedbackMessage displayText={displayText} />
+        <FeedbackMessage displayText={userInput} />
 
         <NewsletterSubscription />
 

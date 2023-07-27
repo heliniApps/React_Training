@@ -1,4 +1,4 @@
-import { useReducer } from "react";
+import { useState, useEffect } from "react";
 
 const getNewsletterSubsText = (isChecked) => {
   if (isChecked === true) {
@@ -8,18 +8,15 @@ const getNewsletterSubsText = (isChecked) => {
   }
 };
 
-const subscriptionMessageReducer = (currState, checked) => {
-  if (checked === null || typeof checked !== "boolean") {
-    checked = currState;
-  }
-  return checked;
-};
-
 const NewsletterSubscription = () => {
-  const [checked, setChecked] = useReducer(subscriptionMessageReducer, false);
+  const [checked, setChecked] = useState(false);
+  let subsMessage = getNewsletterSubsText(checked);
 
-  const onSubscriptionChange = (event) => {
-    setChecked(event.target.checked);
+  const handleSubscriptionChange = (event) => {
+    let value = event.target.checked;
+    if (value !== null && typeof value === "boolean") {
+      setChecked(value);
+    }
   };
 
   let subsComponent = (
@@ -28,11 +25,9 @@ const NewsletterSubscription = () => {
         type="checkbox"
         id="subscription"
         value={checked}
-        onChange={onSubscriptionChange}
+        onChange={handleSubscriptionChange}
       />
-      <label htmlFor="subscription">
-        {"  " + getNewsletterSubsText(checked)}
-      </label>
+      <label htmlFor="subscription">{" " + subsMessage}</label>
     </div>
   );
 

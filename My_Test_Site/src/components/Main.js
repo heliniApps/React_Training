@@ -1,7 +1,7 @@
 import React from "react";
 
-import CandleType from "./candle-features/CandleType";
 import CandleFragrance from "./candle-features/CandleFragrance";
+import CandleType from "./candle-features/CandleType";
 import CurrentStatus from "./CurrentStatus";
 import FeedbackForm from "./feedback-form/FeedbackForm";
 

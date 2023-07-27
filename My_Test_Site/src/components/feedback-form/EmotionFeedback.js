@@ -68,15 +68,6 @@ const SelectEmotion = ({ options }) => {
   return selectComponent;
 };
 
-const addOptionChangeEventListener = (eventHandler) => {
-  const emojiSelectElem = document.querySelector("#emotions");
-  emojiSelectElem.addEventListener("change", eventHandler, false);
-
-  return () => {
-    emojiSelectElem.removeEventListener("change", eventHandler, false);
-  };
-};
-
 const replyMessageReducer = (currMsg, userInput) => {
   let replyMsgObj = currMsg;
   let newEmojiInfo = findEmojiInfoById(userInput);
@@ -102,17 +93,24 @@ const EmotionFeedback = () => {
   const [replyMsg, setReplyMsg] = useReducer(replyMessageReducer, defaultReply);
   const [userEmotion, setUserEmotion] = useState(defaultEmojiObj.id);
 
-  const onOptionChangeHandler = (event) => {
-    setUserEmotion(event.target.value);
-  };
-
   useEffect(() => {
-    addOptionChangeEventListener(onOptionChangeHandler);
+    const onOptionChangeHandler = (event) => {
+      let inputValue = event.target.value;
+      setUserEmotion(inputValue);
+      setReplyMsg(inputValue);
+    };
+
+    const emojiSelectElem = document.querySelector("#emotions");
+    emojiSelectElem.addEventListener("change", onOptionChangeHandler, false);
+
+    return () => {
+      emojiSelectElem.removeEventListener(
+        "change",
+        onOptionChangeHandler,
+        false
+      );
+    };
   }, []);
-
-  useEffect(() => {
-    setReplyMsg(userEmotion);
-  }, [userEmotion]);
 
   let component = (
     <>

@@ -41,7 +41,8 @@ const CurrentStatus = () => {
           apiKey="yu4bgxbc33mg6ljne04etx8qxroxppy8y5c2wnvbz95w7m7z"
           initialValue=""
           id="statusText"
-          placeholder="Enter current status..."
+          inline={true}
+          tagName="section"
           onInit={onInitTinyMceEditor}
           init={{
             height: 200,

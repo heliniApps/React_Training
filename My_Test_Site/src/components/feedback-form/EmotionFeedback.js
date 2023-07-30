@@ -91,13 +91,13 @@ const EmotionFeedback = () => {
   };
 
   const [replyMsg, setReplyMsg] = useReducer(replyMessageReducer, defaultReply);
-  const [userEmotion, setUserEmotion] = useState(defaultEmojiObj.id);
+  // const [userEmotion, setUserEmotion] = useState(defaultEmojiObj.id);
 
   useEffect(() => {
     const onOptionChangeHandler = (event) => {
       let inputValue = event.target.value;
-      setUserEmotion(inputValue);
       setReplyMsg(inputValue);
+      // setUserEmotion(inputValue);
     };
 
     const emojiSelectElem = document.querySelector("#emotions");

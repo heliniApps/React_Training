@@ -9,7 +9,7 @@ body {
 #root {
   display: flex;
   flex-direction: column;
-  width: 50%;
+  width: 70%;
   height: 100%;
   margin: 0 1rem;
   padding: 0.5rem;
@@ -36,8 +36,44 @@ main {
   margin-bottom: 0.2rem;
 }
 
-.main-form-feedback {
-  background-color: rgb(245, 200, 200);
+.main-form-comment {
+  padding: 0.3rem;
+  background-color: rgb(247, 213, 213);
+}
+
+.comment-elem {
+  margin: 0.5rem;
+  padding: 0.3rem;
+  text-align: left;
+}
+
+div.comment-message {
+  width: 92%;
+  height: fit-content;
+  border: 2px solid black;
+}
+
+.comment-area {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.comment-editor {
+  flex-direction: column;
+}
+
+.comment-buttons {
+  flex-direction: row;
+}
+
+.comment-editor section {
+  border: 2px solid black;
+}
+
+.main-feedback {
+  background-color: rgba(240, 176, 176, 0.952);
 }
 
 .feedback-emoji {
@@ -55,7 +91,7 @@ main {
   margin-bottom: 1rem;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 1.5rem;
-  color: rgb(209, 150, 0);
+  color: rgb(201, 64, 0);
 }
 
 .feedback-message #customerInput span {
@@ -63,7 +99,7 @@ main {
 }
 
 .main-form-status {
-  background-color: rgba(247, 165, 165, 0.952);
+  background-color: rgb(247, 213, 213);
 }
 
 .main-form-status .status-form {
@@ -81,13 +117,17 @@ main {
   font-size: 1.5rem;
 }
 
+.status-text-area {
+  border: 2px solid black;
+}
+
 .status-form .status-submit-btn {
   margin-bottom: 0.5rem;
   padding: 0.5rem;
 }
 
 .main-candle-info {
-  background-color: rgba(245, 129, 129, 0.952);
+  background-color: rgba(240, 140, 140, 0.952);
 }
 
 .candle-features {

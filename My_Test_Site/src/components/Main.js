@@ -2,17 +2,17 @@ import React from "react";
 
 import CandleFragrance from "./candle-features/CandleFragrance";
 import CandleType from "./candle-features/CandleType";
-import CurrentStatus from "./CurrentStatus";
 import FeedbackForm from "./feedback-form/FeedbackForm";
+import PostComment from "./post-comments/PostComment";
 
 const Main = () => {
   let mainComponent = (
     <main>
-      <div className="main-content main-form-feedback">
-        <FeedbackForm />
+      <div className="main-content main-form-comment">
+        <PostComment />
       </div>
-      <div className="main-content main-form-status">
-        <CurrentStatus />
+      <div className="main-content main-feedback">
+        <FeedbackForm />
       </div>
       <div className="main-content main-candle-info">
         <CandleType />

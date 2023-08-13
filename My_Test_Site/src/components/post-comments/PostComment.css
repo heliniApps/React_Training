@@ -1,0 +1,29 @@
+.comment-elem {
+  margin: 0.5rem;
+  padding: 0.3rem;
+  text-align: left;
+}
+
+div.comment-message {
+  width: 92%;
+  height: fit-content;
+  border: 2px solid black;
+}
+
+.comment-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.comment-editor {
+  flex-direction: column;
+}
+
+.comment-editor section {
+  border: 2px solid black;
+}
+
+.comment-buttons {
+  flex-direction: row;
+}

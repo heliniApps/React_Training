@@ -1,0 +1,16 @@
+.ctrl-elem {
+  margin: 0.5rem;
+  padding: 0.3rem;
+  text-align: left;
+}
+
+.elem-border,
+.mce-content-body {
+  border: 2px solid black;
+  border-radius: 3%;
+}
+
+.button-elem {
+  margin: 0.5rem;
+  padding: 0.3rem;
+}

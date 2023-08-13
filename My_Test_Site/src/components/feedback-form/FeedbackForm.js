@@ -1,3 +1,5 @@
+import "./FeedbackFormStyles.css";
+
 import { useReducer } from "react";
 
 import NewsletterSubscription from "./NewsletterSubscription";

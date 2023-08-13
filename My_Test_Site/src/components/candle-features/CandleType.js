@@ -1,3 +1,5 @@
+import "./CandleFeatureStyles.css";
+
 import FeatureImage from "./FeatureImage";
 import FeatureList from "./FeatureList";
 import { candleTypeData } from "../../model/data.js";

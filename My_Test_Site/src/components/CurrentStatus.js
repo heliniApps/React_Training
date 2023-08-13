@@ -39,6 +39,7 @@ const CurrentStatus = () => {
       <div className="status-text-area">
         <Editor
           apiKey="yu4bgxbc33mg6ljne04etx8qxroxppy8y5c2wnvbz95w7m7z"
+          tinymceScriptSrc="https://cdn.tiny.cloud/1/yu4bgxbc33mg6ljne04etx8qxroxppy8y5c2wnvbz95w7m7z/tinymce/5/tinymce.min.js"
           initialValue=""
           id="statusText"
           inline={true}

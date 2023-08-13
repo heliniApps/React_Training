@@ -1,0 +1,54 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: cornsilk;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  height: 100%;
+  margin: 0 1rem;
+  padding: 0.5rem;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+  text-align: center;
+}
+
+header {
+  width: 80%;
+  margin: 0.5rem;
+  padding: 0.5rem;
+}
+
+main {
+  width: 82%;
+  margin: 0;
+}
+
+.main-content {
+  height: fit-content;
+  margin-top: 0.5rem;
+  margin-bottom: 0.2rem;
+  padding: 0.3rem;
+}
+
+.main-candle-info {
+  background-color: rgba(240, 140, 140, 0.952);
+}
+
+.main-feedback {
+  background-color: rgba(240, 176, 176, 0.952);
+}
+
+.main-form-comment {
+  background-color: rgb(247, 213, 213);
+}
+
+.main-controlled-comment {
+  background-color: darkgrey;
+}

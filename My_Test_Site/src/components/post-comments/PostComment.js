@@ -1,3 +1,5 @@
+import "./PostComment.css";
+
 import { useRef, useEffect } from "react";
 import { Editor } from "@tinymce/tinymce-react";
 
@@ -10,16 +12,16 @@ const PostComment = () => {
   };
 
   useEffect(() => {
-    let labelElem = document.querySelector("p#postedComment");
+    let paraElem = document.querySelector("div#postedComment");
 
     const onPostHandler = (event) => {
-      let inputText = editorRef.current.getContent({ format: "text" });
-      labelElem.textContent = inputText;
+      let inputValue = editorRef.current.getContent();
+      paraElem.innerHTML = inputValue;
       editorRef.current.resetContent();
     };
 
     const onClearHandler = () => {
-      labelElem.textContent = null;
+      paraElem.textContent = null;
     };
 
     let postBtn = document.querySelector("button#postBtn");
@@ -36,16 +38,16 @@ const PostComment = () => {
   let component = (
     <>
       <div className="comment-elem comment-message">
-        <p id="postedComment"></p>
+        <div id="postedComment"></div>
       </div>
       <div className="comment-elem comment-area comment-editor">
         <Editor
           apiKey="yu4bgxbc33mg6ljne04etx8qxroxppy8y5c2wnvbz95w7m7z"
           initialValue=""
-          id="commentText"
           textareaName="commentTextArea"
           onInit={onEditorInitHandler}
           init={{
+            id: "commentText",
             height: 200,
             width: 400,
             menubar: false,

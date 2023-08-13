@@ -1,0 +1,21 @@
+.feedback-emoji {
+  margin-bottom: 1rem;
+  border-bottom: 3px dashed beige;
+}
+
+.feedback-elem {
+  margin: 0.5rem;
+  padding: 0.3rem;
+  text-align: left;
+}
+
+.feedback-elem.feedback-reply {
+  margin-bottom: 1rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1.5rem;
+  color: rgb(201, 64, 0);
+}
+
+.feedback-message #customerInput span {
+  color: steelblue;
+}

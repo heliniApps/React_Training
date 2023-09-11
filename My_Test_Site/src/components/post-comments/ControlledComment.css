@@ -6,11 +6,25 @@
 
 .elem-border,
 .mce-content-body {
-  border: 2px solid black;
-  border-radius: 3%;
+  border: 2px solid rgba(240, 140, 140, 0.952);
+  border-radius: 10px;
 }
 
 .button-elem {
   margin: 0.5rem;
   padding: 0.3rem;
+}
+
+.button-elem button {
+  height: 2.5rem;
+  width: 9rem;
+  border: none;
+  background-color: rgba(240, 140, 140, 0.952);
+  font-size: 1rem;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+.ctrl-editor {
+  color: black;
 }

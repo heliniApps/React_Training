@@ -28,8 +28,8 @@ const ControlledComment = () => {
 
   useEffect(() => {
     // Button elements
-    const cleanEditorBtn = document.querySelector("button#cleanEditorBtn");
-    const clearBtn = document.querySelector("button#clearBtn");
+    const cleanEditorBtn = document.querySelector("button#ctrlCleanEditorBtn");
+    const clearBtn = document.querySelector("button#ctrlClearBtn");
 
     // Button-click event handlers
     const onCleanEditorClickHandler = () => {
@@ -68,6 +68,7 @@ const ControlledComment = () => {
           value={commentValue}
           onEditorChange={onEditorChangeHandler}
           init={{
+            id: "controlledCommentArea",
             height: 200,
             width: 400,
             menubar: false,
@@ -101,19 +102,19 @@ const ControlledComment = () => {
         />
       </div>
       <div className="button-elem">
-        <button id="cleanEditorBtn" disabled={!isEditorDirty(commentValue)}>
+        <button id="ctrlCleanEditorBtn" disabled={!isEditorDirty(commentValue)}>
           Clean Editor
         </button>
         &nbsp;&nbsp;&nbsp;
         <button
-          id="postBtn"
+          id="ctrlPostBtn"
           disabled={!isEditorDirty(commentValue)}
           onClick={onPostCommentClickHandler}
         >
           Post Comment
         </button>
         &nbsp;&nbsp;&nbsp;
-        <button id="clearBtn">Clear Comment</button>
+        <button id="ctrlClearBtn">Clear Comment</button>
       </div>
     </>
   );

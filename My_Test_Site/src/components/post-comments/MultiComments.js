@@ -1,7 +1,7 @@
 import "./MultiComments.css";
 
 import { Editor } from "@tinymce/tinymce-react";
-import { useState, useReducer, useEffect, useCallback } from "react";
+import { useState, useReducer, useEffect } from "react";
 
 const isEmptyContent = (editorValue = null) => {
   let contentLength = 0;
@@ -10,9 +10,8 @@ const isEmptyContent = (editorValue = null) => {
     contentLength = editorValue
       .split(/&nbsp;/)
       .map((line) => line.trim())
-      .filter(
-        (line) => line !== "<p>" && line !== "</p>" && line.length > 0
-      ).length;
+      .filter((line) => line !== "<p>" && line !== "</p>" && line.length > 0)
+      .length;
   }
   return contentLength === 0;
 };
@@ -57,9 +56,6 @@ const commentsArrayReducer = (currState, newCommentObj) => {
       commentsArr.push(newCommentObj);
     }
   }
-
-  console.log("commentsArr: ", commentsArr);
-
   return commentsArr;
 };
 
@@ -82,12 +78,11 @@ const MultiComments = () => {
 
   // Button event handlers
   useEffect(() => {
-    const cleanEditorBtn = document.querySelector("button#cleanEditorBtn");
+    const cleanEditorBtn = document.querySelector("button#multiCleanEditorBtn");
     const onCleanEditorClickHandler = (event) => {
       setCommentValue(initialValue);
     };
     cleanEditorBtn.addEventListener("click", onCleanEditorClickHandler, false);
-
     return () => {
       cleanEditorBtn.removeEventListener(
         "click",
@@ -98,7 +93,7 @@ const MultiComments = () => {
   }, []);
 
   useEffect(() => {
-    const clearAllBtn = document.querySelector("button#clearBtn");
+    const clearAllBtn = document.querySelector("button#multiClearBtn");
     const onClearAllCommentsClickHandler = (event) => {
       setCommentsArr(null); // Resets the comments array.
     };
@@ -107,7 +102,6 @@ const MultiComments = () => {
       onClearAllCommentsClickHandler,
       false
     );
-
     return () => {
       clearAllBtn.removeEventListener(
         "click",
@@ -117,37 +111,14 @@ const MultiComments = () => {
     };
   }, []);
 
-  // const onPostCommentClickHandler = (event) => {
-  //   const commentObj = {
-  //     id: commentsArr.length + 1,
-  //     commentValue: commentValue
-  //   };
-  //   setCommentsArr(commentObj);
-  //   setCommentValue(initialValue);
-  // };
-
-  const onPostCommentClickHandler = useCallback(
-    (event) => {
-      console.log("ran onPostCommentClickHandler()");
-      const commentObj = {
-        id: commentsArr.length + 1,
-        commentValue: commentValue,
-      };
-      setCommentsArr(commentObj);
-      setCommentValue(initialValue);
-    },
-    [commentValue, commentsArr]
-  );
-
-  useEffect(() => {
-    console.log("running useEffect for PostBtn.");
-    const postBtn = document.querySelector("button#postBtn");
-    postBtn.addEventListener("click", onPostCommentClickHandler, false);
-
-    return () => {
-      postBtn.removeEventListener("click", onPostCommentClickHandler, false);
+  const onPostCommentClickHandler = (event) => {
+    const commentObj = {
+      id: commentsArr.length + 1,
+      commentValue: commentValue
     };
-  }, [onPostCommentClickHandler]);
+    setCommentsArr(commentObj);
+    setCommentValue(initialValue);
+  };
 
   const component = (
     <>
@@ -192,30 +163,30 @@ const MultiComments = () => {
               "code",
               "help",
               "wordcount",
-              "emoticons",
+              "emoticons"
             ],
             toolbar:
               "undo redo | blocks | emoticons | " +
               "bold italic forecolor | alignleft aligncenter " +
               "alignright alignjustify | bullist numlist outdent indent | " +
-              "removeformat | help ",
+              "removeformat | help "
           }}
         />
       </div>
       <div className="multi-button">
-        <button id="cleanEditorBtn" disabled={isDisabledCleanEditor}>
+        <button id="multiCleanEditorBtn" disabled={isDisabledCleanEditor}>
           Clean Editor
         </button>
         &nbsp;&nbsp;&nbsp;
         <button
-          id="postBtn"
+          id="multiPostBtn"
           disabled={isDisabledPostComment}
           onClick={onPostCommentClickHandler}
         >
           Post Comment
         </button>
         &nbsp;&nbsp;&nbsp;
-        <button id="clearBtn">Clear All Comments</button>
+        <button id="multiClearBtn">Clear All Comments</button>
       </div>
     </>
   );

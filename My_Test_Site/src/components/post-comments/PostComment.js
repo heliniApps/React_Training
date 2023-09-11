@@ -43,6 +43,7 @@ const PostComment = () => {
       <div className="comment-elem comment-area comment-editor">
         <Editor
           apiKey="yu4bgxbc33mg6ljne04etx8qxroxppy8y5c2wnvbz95w7m7z"
+          id="commentText"
           initialValue=""
           textareaName="commentTextArea"
           onInit={onEditorInitHandler}

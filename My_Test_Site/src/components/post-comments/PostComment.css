@@ -20,7 +20,7 @@ div.comment-message {
   flex-direction: column;
 }
 
-.comment-editor section {
+.comment-editor .tox-tinymce {
   border: 2px solid black;
 }
 

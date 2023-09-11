@@ -5,10 +5,14 @@ import CandleType from "./candle-features/CandleType";
 import FeedbackForm from "./feedback-form/FeedbackForm";
 import PostComment from "./post-comments/PostComment";
 import ControlledComment from "./post-comments/ControlledComment";
+import MultiComments from "./post-comments/MultiComments";
 
 const Main = () => {
   let mainComponent = (
     <main>
+      <div className="main-content main-multi-comment">
+        <MultiComments />
+      </div>
       <div className="main-content main-controlled-comment">
         <ControlledComment />
       </div>

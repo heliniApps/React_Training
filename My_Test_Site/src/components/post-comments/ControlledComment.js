@@ -57,7 +57,7 @@ const ControlledComment = () => {
   const component = (
     <>
       <div id="postedCommentText" className="ctrl-elem elem-border"></div>
-      <div className="ctrl-elem">
+      <div className="ctrl-elem ctrl-editor">
         <p>Type content below in the inline editor:</p>
         <Editor
           apiKey="yu4bgxbc33mg6ljne04etx8qxroxppy8y5c2wnvbz95w7m7z"

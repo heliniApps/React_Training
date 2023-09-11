@@ -46,9 +46,13 @@ main {
 }
 
 .main-form-comment {
-  background-color: rgb(247, 213, 213);
+  background-color: rgb(145, 145, 145);
 }
 
 .main-controlled-comment {
-  background-color: darkgrey;
+  background-color: rgb(179, 175, 175);
+}
+
+.main-multi-comment {
+  background-color: rgb(206, 204, 204);
 }
